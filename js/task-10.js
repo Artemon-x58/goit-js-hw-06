@@ -12,6 +12,7 @@ const boxesEl = document.querySelector('#boxes');
 
 function createBoxes(amount) {
   amount = Number(inputNumberEl.value);
+  boxesEl.innerHTML = '';
   for(let i = 0; i < amount; i++){
     const size = 30 + i * 10;
     const item = document.createElement('div');
