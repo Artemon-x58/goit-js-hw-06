@@ -16,11 +16,15 @@ const images = [
 
 
 const makeGallery = ({url, alt}) => {
-  return `<li class="item"><img src="${url}" alt="${alt} class="img"></li>`;
+  return `<li class="item"><img src="${url}" alt="${alt} width = "350px" height = "200px" class="img"></li>`;
 }
 
 const listEl = document.querySelector('.gallery')
 const makeGalleryHtml = images.map(makeGallery).join(' ');
 
+listEl.insertAdjacentHTML('beforeend', makeGalleryHtml);
 
-listEl.insertAdjacentHTML('beforeend', makeGalleryHtml)
+listEl.style.display = 'flex';
+listEl.style.listStyle = 'none';
+listEl.style.gap = '30px';
+
