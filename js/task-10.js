@@ -15,13 +15,23 @@ function createBoxes(amount) {
   for(let i = 0; i < amount; i++){
     const size = 30 + i * 10;
     const item = document.createElement('div');
+    const nameColor = document.createElement('p');
+    nameColor.textContent = getRandomHexColor();
+    
+    nameColor.style.width = '100%';
+    nameColor.style.fontSize = '12px'
+    nameColor.style.display = 'flex';
+    nameColor.style.justifyContent = 'center';
+    nameColor.style.alignItems = 'center'
+    
+    item.appendChild(nameColor);
+    item.style.display = 'flex'
     item.style.width = `${size}px`;
     item.style.height = `${size}px`;
     item.style.backgroundColor = getRandomHexColor();
     boxesEl.appendChild(item)
-    // boxesEl.insertAdjacentHTML("beforeend", '<div width ="${size}" height = "${size}"></div>')
-  }
-}
+    
+}}
 
 function destroyBoxes () {
   boxesEl.innerHTML = '';
